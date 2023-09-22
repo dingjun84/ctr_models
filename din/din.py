@@ -246,7 +246,7 @@ def step_debug():
     # True的地方为score，否则为极大的负数
     score = tf.where(key_masks, score, padding)  # (B, 1, T)
     print("after mask score:", score)
-    # 可以理解为历史物品中的权重为1，每个商品的权重
+    # 可以理解为历史物品中总权重为1，每个商品的权重
     score = tf.nn.softmax(score)
     print("softmax(score):", score)
     '''
